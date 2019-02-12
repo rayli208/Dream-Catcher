@@ -1,0 +1,135 @@
+.fa-microphone {
+  font-size: 40px;
+  color: skyblue;
+  border: 2px solid skyblue;
+  border-radius: 50%;
+  padding: 5px 10px;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.fa-microphone:hover {
+  font-size: 40px;
+  color: #0f3459;
+  border: 2px dotted #0f3459;
+  border-radius: 50%;
+  padding: 5px 10px;
+  transition: .5s;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+.fa-home, .fa-sign-out-alt{
+  color: skyblue;
+}
+
+.page-link:hover{
+  background-color: #0f3459;
+}
+
+p {
+  line-height: 1em;
+  font-size: 1em;
+}
+
+#dream-title {
+  max-width: 500px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid skyblue;
+  padding: 1rem 2rem 1rem 5rem;
+  background-size: 100% 3rem;
+  position: relative;
+  line-height: 3rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+#dream-text {
+  max-width: 500px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid skyblue;
+  padding: 1rem 2rem 1rem 5rem;
+  background-size: 100% 3rem;
+  position: relative;
+  line-height: 3rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.fa-stop {
+  font-size: 40px;
+  color: red;
+  padding: 5px 10px;
+}
+
+.btn-lightblue {
+  background: skyblue;
+  color: white;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.btn-lightblue:hover {
+  background: #0f3459;
+  color: white;
+  border: black 1px dotted;
+  transition: .5s;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+.card-header-lightblue {
+  background-color: skyblue;
+  color: white;
+}
+
+.custom-range {
+  width: 60%;
+  color: skyblue;
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: skyblue;
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  background: skyblue;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  background: skyblue;
+}
+
+output {
+  color: skyblue;
+}
+
+ .skyblue-text{
+  color: skyblue;
+}
+
+.card {
+  border-color: skyblue;
+}
+
+nav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  color: skyblue;
+}
+
+p::first-letter { 
+  text-transform: uppercase;
+}
+
+.skyblue{
+  background-color: skyblue;
+}
+
+hr{
+  border: 1.5px solid skyblue;
+}
