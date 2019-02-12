@@ -4,7 +4,7 @@ $(document).ready(function () {
   $.get("/api/Dreams/", function (data) {
     if (data.length !== 0) {
       var all_dreams = document.getElementById("all-dreams");
-      for (var i = data.length - 1; i > (data.length - data.length); i--) {
+      for (var i = data.length - 1; i+1 > (data.length - data.length); i--) {
         var body = JSON.parse(data[i].body);
         var card = `
           <div class="col-md-4 col-12">
