@@ -8,16 +8,20 @@ $(document).ready(function () {
       var userid = [];
       var quality_sleep = [];
       var length_sleep = [];
+      var i = data.length;
 
-
-      for (var i = data.length-1; i > (data.length-4); i--) {
-
-        var stamp = moment(data[i].createdAt).format("MM/DD");
-        userid.push(stamp);
-        quality_sleep.push(data[i].quality_sleep);
-        length_sleep.push(data[i].length_sleep);
+      if (data.length < 3) {
+        $("#noData-text").show();
+        $("#myChart").hide();
+      } else {
+        $("#noData-text").hide();
+        for (var i = data.length - 1; i > (data.length - 4); i--) {
+          var stamp = moment(data[i].createdAt).format("MM/DD");
+          userid.push(stamp);
+          quality_sleep.push(data[i].quality_sleep);
+          length_sleep.push(data[i].length_sleep);
+        }
       }
-
       var chartdata = {
         labels: userid,
         datasets: [{
@@ -46,7 +50,7 @@ $(document).ready(function () {
       var ctx = $("#myChart");
 
       var LineGraph = new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: chartdata
       });
     },
