@@ -1,5 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
+  // var stamp = moment().format("lll");
   var Dream = sequelize.define("Dream", {
+    
     title: {
       type: DataTypes.STRING,
       allowNull: false,
