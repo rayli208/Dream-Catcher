@@ -47,6 +47,7 @@ $(document).ready(function () {
       var latest_dreams = document.getElementById("latest-dreams");
       for (var i = data.length-1; i > (data.length-4); i--) {
         var body = JSON.parse(data[i].body);
+        var stamp = moment(data[i].createdAt).format("lll");
         var mini_card = `
           <div class="card mt-2 mb-2 shadow">
             <div class="card-header skyblue text-white">
@@ -56,7 +57,7 @@ $(document).ready(function () {
               ${body}
             </div>
             <div class="card-footer skyblue text-white">
-              Created at: ${data[i].createdAt}
+              Created at: ${stamp}
             </div>
           </div>`;
 

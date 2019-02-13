@@ -112,6 +112,8 @@ output {
 
 .card {
   border-color: skyblue;
+  width: 90%;
+  margin: 0 auto;
 }
 
 nav {
