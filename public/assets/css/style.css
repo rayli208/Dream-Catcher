@@ -6,7 +6,7 @@ body {
   /* These two lines are counted as one :slightly_smiling_face:       */
   display: flex;
   align-items: center;
- }
+}
 
 .fa-microphone {
   font-size: 40px;
@@ -27,11 +27,12 @@ body {
   box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
 }
 
-.fa-home, .fa-sign-out-alt{
+.fa-home,
+.fa-sign-out-alt {
   color: skyblue;
 }
 
-.page-link:hover{
+.page-link:hover {
   background-color: #0f3459;
 }
 
@@ -116,7 +117,7 @@ output {
   color: skyblue;
 }
 
- .skyblue-text{
+.skyblue-text {
   color: skyblue;
 }
 
@@ -129,48 +130,51 @@ output {
 nav {
   position: fixed;
   right: 0;
-  bottom: 0;
+  top: 0;
   z-index: 2;
+  margin-top: 10px;
   color: #bfd5ed;
 }
 
-p::first-letter { 
+p::first-letter {
   text-transform: uppercase;
 }
 
-.skyblue{
+.skyblue {
   background-color: skyblue;
 }
 
-hr{
+hr {
   border: 1.5px solid skyblue;
 }
 
 #myChart {
   background: white;
   border: 3px solid skyblue;
-  border-radius:  5px;
+  border-radius: 5px;
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
- 
+
   100% {
     opacity: 1;
   }
- }
+}
 
- .fadeIn {
-   opacity: 1;
-   animation-name: fadeIn;
-   animation-duration: 5s;
- }
+.fadeIn {
+  opacity: 1;
+  animation-name: fadeIn;
+  animation-duration: 5s;
+}
 
- .vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
+.vertical-center {
+  min-height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+  /* These two lines are counted as one :-)       */
   display: flex;
   align-items: center;
 }
@@ -186,7 +190,7 @@ hr{
   position: fixed;
   right: 0;
   bottom: 0;
-  min-width: 100%; 
+  min-width: 100%;
   min-height: 100%;
 }
 
@@ -215,13 +219,13 @@ hr{
   border: 1px solid #BFD5ED;
 }
 
-.right-delete{
+.right-delete {
   float: right;
   color: white;
   font-size: 1.2em;
 }
 
-.right-delete:hover{
+.right-delete:hover {
   transition: 1s;
   color: red;
 }
