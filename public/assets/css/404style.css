@@ -1,0 +1,81 @@
+body {
+  background-image: linear-gradient(#C1292E, #0F3459, #BFD5ED);
+  min-height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+  /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.snorlax {
+  opacity: 1;
+  animation-name: fadeIn;
+  animation-duration: 3s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: .1;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: .1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: .1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: .1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.textContainer {
+  color: white;
+  opacity: 0;
+  color: #F0A3BE;
+  animation-name: fadeInOut;
+  animation-delay: 2s;
+  animation-duration: 22s;
+  animation-iteration-count: 100
+}
