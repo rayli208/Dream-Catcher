@@ -18,14 +18,9 @@ module.exports = {
     db.User
       .create(req.body)
       .then(function (userInfo) {
-        req.login(userInfo, function (err) {
-          if (err) {
-            throw err;
-          }
-          console.log(req.user)
-          return res.json("/")
+          console.log(req.user);
+          res.json("/");
         })
-      })
       .catch(err => console.log(err));
   },
 

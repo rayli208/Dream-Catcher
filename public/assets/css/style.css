@@ -210,6 +210,18 @@ hr{
 }
 
 .btn:hover {
-  color: #0F3459;
+  background-color: #0F3459;
+  color: white;
   border: 1px solid #BFD5ED;
+}
+
+.right-delete{
+  float: right;
+  color: white;
+  font-size: 1.2em;
+}
+
+.right-delete:hover{
+  transition: 1s;
+  color: red;
 }

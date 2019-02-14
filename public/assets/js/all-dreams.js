@@ -84,7 +84,7 @@ $(document).ready(function () {
             <div class="col-md-4 col-12 d-flex">
               <div class="card shadow mb-3">
                 <div class="card-header skyblue text-white">
-                ${data[i].title}
+                ${data[i].title} <i class="fas fa-minus-circle right-delete"></i>
                 </div>
                 <div class="card-body">
                    ${body}
