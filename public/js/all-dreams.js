@@ -25,20 +25,20 @@ $(document).ready(function () {
             label: "Quality of Sleep",
             fill: false,
             lineTension: 0.1,
-            backgroundColor: "rgba(59, 89, 152, 0.75)",
-            borderColor: "rgba(59, 89, 152, 1)",
-            pointHoverBackgroundColor: "rgba(59, 89, 152, 1)",
-            pointHoverBorderColor: "rgba(59, 89, 152, 1)",
+            backgroundColor: "rgba(193, 41, 46, 0.75)",
+            borderColor: "rgba(193, 41, 46, 0.75)",
+            pointHoverBackgroundColor: "rgba(193, 41, 46, 0.75)",
+            pointHoverBorderColor: "rgba(193, 41, 46, 0.75)",
             data: quality_sleep
           },
           {
             label: "Hours of Sleep",
             fill: false,
             lineTension: 0.1,
-            backgroundColor: "rgba(29, 202, 255, 0.75)",
-            borderColor: "rgba(29, 202, 255, 1)",
-            pointHoverBackgroundColor: "rgba(29, 202, 255, 1)",
-            pointHoverBorderColor: "rgba(29, 202, 255, 1)",
+            backgroundColor: "rgba(15, 52, 89, 0.75)",
+            borderColor: "rgba(15, 52, 89, 0.75)",
+            pointHoverBackgroundColor: "rgba(15, 52, 89, 0.75)",
+            pointHoverBorderColor: "rgba(15, 52, 89, 0.75)",
             data: length_sleep
           }
         ]

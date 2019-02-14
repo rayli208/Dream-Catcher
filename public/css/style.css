@@ -1,3 +1,13 @@
+body {
+  background-image: linear-gradient(#C1292E, #0F3459, #BFD5ED);
+  min-height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+  /* These two lines are counted as one :slightly_smiling_face:       */
+  display: flex;
+  align-items: center;
+ }
+
 .fa-microphone {
   font-size: 40px;
   color: skyblue;
@@ -121,7 +131,7 @@ nav {
   right: 0;
   bottom: 0;
   z-index: 2;
-  color: skyblue;
+  color: #bfd5ed;
 }
 
 p::first-letter { 
@@ -135,3 +145,25 @@ p::first-letter {
 hr{
   border: 1.5px solid skyblue;
 }
+
+#myChart {
+  background: white;
+  border: 3px solid skyblue;
+  border-radius:  5px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+ 
+  100% {
+    opacity: 1;
+  }
+ }
+
+ .fadeIn {
+   opacity: 1;
+   animation-name: fadeIn;
+   animation-duration: 5s;
+ }
