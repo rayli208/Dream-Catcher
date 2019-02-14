@@ -1,0 +1,215 @@
+body {
+  background-image: linear-gradient(#C1292E, #0F3459, #BFD5ED);
+  min-height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+  /* These two lines are counted as one :slightly_smiling_face:       */
+  display: flex;
+  align-items: center;
+ }
+
+.fa-microphone {
+  font-size: 40px;
+  color: skyblue;
+  border: 2px solid skyblue;
+  border-radius: 50%;
+  padding: 5px 10px;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.fa-microphone:hover {
+  font-size: 40px;
+  color: #0f3459;
+  border: 2px dotted #0f3459;
+  border-radius: 50%;
+  padding: 5px 10px;
+  transition: .5s;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+.fa-home, .fa-sign-out-alt{
+  color: skyblue;
+}
+
+.page-link:hover{
+  background-color: #0f3459;
+}
+
+p {
+  line-height: 1em;
+  font-size: 1em;
+}
+
+#dream-title {
+  max-width: 500px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid skyblue;
+  padding: 1rem 2rem 1rem 5rem;
+  background-size: 100% 3rem;
+  position: relative;
+  line-height: 3rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+#dream-text {
+  max-width: 500px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid skyblue;
+  padding: 1rem 2rem 1rem 5rem;
+  background-size: 100% 3rem;
+  position: relative;
+  line-height: 3rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.fa-stop {
+  font-size: 40px;
+  color: red;
+  padding: 5px 10px;
+}
+
+.btn-lightblue {
+  background: skyblue;
+  color: white;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.btn-lightblue:hover {
+  background: #0f3459;
+  color: white;
+  border: black 1px dotted;
+  transition: .5s;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+.card-header-lightblue {
+  background-color: skyblue;
+  color: white;
+}
+
+.custom-range {
+  width: 60%;
+  color: skyblue;
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: skyblue;
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  background: skyblue;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  background: skyblue;
+}
+
+output {
+  color: skyblue;
+}
+
+ .skyblue-text{
+  color: skyblue;
+}
+
+.card {
+  border-color: skyblue;
+  width: 90%;
+  margin: 0 auto;
+}
+
+nav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  color: #bfd5ed;
+}
+
+p::first-letter { 
+  text-transform: uppercase;
+}
+
+.skyblue{
+  background-color: skyblue;
+}
+
+hr{
+  border: 1.5px solid skyblue;
+}
+
+#myChart {
+  background: white;
+  border: 3px solid skyblue;
+  border-radius:  5px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+ 
+  100% {
+    opacity: 1;
+  }
+ }
+
+ .fadeIn {
+   opacity: 1;
+   animation-name: fadeIn;
+   animation-duration: 5s;
+ }
+
+ .vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+}
+
+#myVideo {
+  z-index: -2;
+  filter: opacity(0.5);
+}
+
+.overlay {
+  z-index: -1;
+  background-image: linear-gradient(#C1292E, #0F3459, #BFD5ED);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+
+.image-box {
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.15);
+  width: 30%;
+  height: 75%;
+  margin: auto;
+}
+
+.home-image {
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn {
+  background-color: #C1292E;
+}
+
+.btn:hover {
+  color: #0F3459;
+  border: 1px solid #BFD5ED;
+}
