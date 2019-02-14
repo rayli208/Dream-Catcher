@@ -80,11 +80,12 @@ $(document).ready(function () {
         for (var i = data.length - 1; i+1 > (data.length - data.length); i--) {
           var body = JSON.parse(data[i].body);
           var stamp = moment(data[i].createdAt).format("lll");
+          console.log(data[i].id)
           var card = `
-            <div class="col-md-4 col-12 d-flex">
+            <div class="col-md-4 col-12 d-flex dream-card" data-id="${data[i].id}">
               <div class="card shadow mb-3">
                 <div class="card-header skyblue text-white">
-                ${data[i].title} <i class="fas fa-minus-circle right-delete"></i>
+                ${data[i].title} <i class="fas fa-minus-circle right-delete delete-btn"></i>
                 </div>
                 <div class="card-body">
                    ${body}
@@ -105,4 +106,19 @@ $(document).ready(function () {
       }
     });
   }
+
+  $(document).on("click", ".delete-btn", function() {
+
+    const dreamId = $(this).parents(".dream-card").data().id;
+
+    $.ajax({
+      url: `/api/dreams/${dreamId}`,
+      method: "DELETE"
+    }).then(function(deleteDream) {
+      console.log(deleteDream);
+      location.reload();
+    })
+    .catch(err => console.log(err));
+  })
+
 });
