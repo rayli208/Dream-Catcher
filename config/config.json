@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "0201123rR$",
-    "database": "dreamcatcher_db",
+    "password": "admin",
+    "database": "dream_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "0201123rR$",
+    "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
