@@ -28,18 +28,49 @@ $(document).ready(function() {
       last_name: $("#last-name").val().trim(),
       email: $("#new-email").val().trim(),
       password: $("#new-password").val().trim()
+    };      
+
+    const checkPass = userInfo.password
+    const password2 = $("#password2").val().trim();
+
+    if(checkPass.length < 8) {
+      alert("Password needs to be at least 8 characters");
+      return;
     };
 
-    $.ajax({
+    const lowerCaseLetters = /[a-z]/g;
+    if(!lowerCaseLetters.test(checkPass)) { 
+      alert("Password must contain at least one lowercase letter");
+      return false;
+    };
+
+    const upperCaseLetters = /[A-Z]/g;
+    if(!upperCaseLetters.test(checkPass)) { 
+      alert("Password must contain at least one uppercase letter");
+      return false;
+    }
+
+    const numbers = /[0-9]/g;
+    if(!numbers.test(checkPass)) { 
+      alert("Password must contain at least one number");
+      return false;
+    }
+
+    if(checkPass != password2) {
+      alert("Passwords do not match");
+      return false
+    } 
+    else {
+      $.ajax({
       url: "/api/user/register",
       method: "POST",
       data: userInfo
-    })
-    .then(function(redirectRoute) {
+      })
+      .then(function(redirectRoute) {
       console.log(userInfo);
       location.replace(redirectRoute);
-    })
-    .catch(err => console.log(err));
+      })
+      .catch(err => console.log(err));  
+    }
   });
-
 });
