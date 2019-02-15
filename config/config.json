@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "admin",
+    "password": "0201123rR$",
     "database": "dreamcatcher_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
