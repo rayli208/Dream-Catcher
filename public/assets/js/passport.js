@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  
 
   $("#new-password").popover({html: true}) 
 
