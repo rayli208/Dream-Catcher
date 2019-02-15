@@ -140,7 +140,7 @@ $(document).ready(function () {
             console.log(deleteDream);
             setTimeout(function () {
               location.reload();
-            }, 2000);
+            }, 1500);
           })
           .catch(err => console.log(err));
       }
