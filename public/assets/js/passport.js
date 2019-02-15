@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  $("#new-password").popover({html: true}) 
+
   $("#login-btn").on("click", function(e) {
     e.preventDefault();
 
@@ -33,42 +35,57 @@ $(document).ready(function() {
     const checkPass = userInfo.password
     const password2 = $("#password2").val().trim();
 
+    const errorMsg = [];
+
+    if(checkPass != password2) {
+      console.log("pass does not match");
+      // alert("Passwords do not match");
+      errorMsg.push(`<li>Passwords do not match.</li>`);
+    };
+
     if(checkPass.length < 8) {
-      alert("Password needs to be at least 8 characters");
-      return;
+      console.log("Need 8 chars");
+      errorMsg.push(`<li>Password needs to be at least 8 characters.</li>`);
     };
 
     const lowerCaseLetters = /[a-z]/g;
     if(!lowerCaseLetters.test(checkPass)) { 
-      alert("Password must contain at least one lowercase letter");
-      return false;
+      console.log("need a lowercase");
+      errorMsg.push(`<li>Password must contain at least one lowercase letter.</li>`);
     };
 
     const upperCaseLetters = /[A-Z]/g;
     if(!upperCaseLetters.test(checkPass)) { 
-      alert("Password must contain at least one uppercase letter");
-      return false;
-    }
+      console.log("need an uppercase");
+      errorMsg.push(`<li>Password must contain at least one uppercase letter.</li>`);
+    };
 
     const numbers = /[0-9]/g;
     if(!numbers.test(checkPass)) { 
-      alert("Password must contain at least one number");
+      console.log("Need a number");
+      errorMsg.push(`<li>Password must contain at least one number.</li>`);
+    };
+
+    if (errorMsg.length > 0) {
+      console.log("you have some errors")
+      console.log(errorMsg);
+      const errString = errorMsg.join("\n")
+      $("#new-password").popover({'html': true});
+      $("#new-password").attr("data-content", errString);
+      $('[data-toggle=popover]').popover('show');
       return false;
     }
-
-    if(checkPass != password2) {
-      alert("Passwords do not match");
-      return false
-    } 
-    else {
-      $.ajax({
+    else { 
+       
+      $.ajax({  
       url: "/api/user/register",
       method: "POST",
       data: userInfo
       })
       .then(function(redirectRoute) {
-      console.log(userInfo);
-      location.replace(redirectRoute);
+        $("#redirect-modal").modal('show');
+        setTimeout(function() {$("#redirect-modal").modal('hide')}, 1500);
+        setTimeout(function() {location.replace(redirectRoute); }, 2000);
       })
       .catch(err => console.log(err));  
     }
