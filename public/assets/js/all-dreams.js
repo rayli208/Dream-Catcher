@@ -1,74 +1,76 @@
 $(document).ready(function () {
 
   $.ajax({
-    url: "/api/user/userdata",
-    type: "GET"
-  }).then(userData => {
-    let { id } = userData
+      url: "/api/user/userdata",
+      type: "GET"
+    }).then(userData => {
+      let {
+        id
+      } = userData
 
-    dreamChart(id);
-    dreamData(id);
-  })
-  .catch(err => console.log(err));
-  
-  
+      dreamChart(id);
+      dreamData(id);
+    })
+    .catch(err => console.log(err));
+
+
   const dreamChart = (id) => {
 
-      $.ajax({
-    url: `/api/dreams/${id}`,
-    type: "GET",
-    success: function (data) {
-      console.log(data);
+    $.ajax({
+      url: `/api/dreams/${id}`,
+      type: "GET",
+      success: function (data) {
+        console.log(data);
 
-      var userid = [];
-      var quality_sleep = [];
-      var length_sleep = [];
+        var userid = [];
+        var quality_sleep = [];
+        var length_sleep = [];
 
 
-      for (var i in data) {
+        for (var i in data) {
 
-        var stamp = moment(data[i].createdAt).format("MM/DD");
-        userid.push(stamp);
-        quality_sleep.push(data[i].quality_sleep);
-        length_sleep.push(data[i].length_sleep);
+          var stamp = moment(data[i].createdAt).format("MM/DD");
+          userid.push(stamp);
+          quality_sleep.push(data[i].quality_sleep);
+          length_sleep.push(data[i].length_sleep);
+        }
+
+        var chartdata = {
+          labels: userid,
+          datasets: [{
+              label: "Quality of Sleep",
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: "rgba(193, 41, 46, 0.75)",
+              borderColor: "rgba(193, 41, 46, 0.75)",
+              pointHoverBackgroundColor: "rgba(193, 41, 46, 0.75)",
+              pointHoverBorderColor: "rgba(193, 41, 46, 0.75)",
+              data: quality_sleep
+            },
+            {
+              label: "Hours of Sleep",
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: "rgba(15, 52, 89, 0.75)",
+              borderColor: "rgba(15, 52, 89, 0.75)",
+              pointHoverBackgroundColor: "rgba(15, 52, 89, 0.75)",
+              pointHoverBorderColor: "rgba(15, 52, 89, 0.75)",
+              data: length_sleep
+            }
+          ]
+        };
+
+        var ctx = $("#myChart");
+
+        var LineGraph = new Chart(ctx, {
+          type: 'line',
+          data: chartdata
+        });
+      },
+      error: function (data) {
+
       }
-
-      var chartdata = {
-        labels: userid,
-        datasets: [{
-            label: "Quality of Sleep",
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: "rgba(193, 41, 46, 0.75)",
-            borderColor: "rgba(193, 41, 46, 0.75)",
-            pointHoverBackgroundColor: "rgba(193, 41, 46, 0.75)",
-            pointHoverBorderColor: "rgba(193, 41, 46, 0.75)",
-            data: quality_sleep
-          },
-          {
-            label: "Hours of Sleep",
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: "rgba(15, 52, 89, 0.75)",
-            borderColor: "rgba(15, 52, 89, 0.75)",
-            pointHoverBackgroundColor: "rgba(15, 52, 89, 0.75)",
-            pointHoverBorderColor: "rgba(15, 52, 89, 0.75)",
-            data: length_sleep
-          }
-        ]
-      };
-
-      var ctx = $("#myChart");
-
-      var LineGraph = new Chart(ctx, {
-        type: 'line',
-        data: chartdata
-      });
-    },
-    error: function (data){
-      
-    }
-  });
+    });
   }
 
   //Load up ALL dreams in dream journal
@@ -77,7 +79,7 @@ $(document).ready(function () {
     $.get(`/api/dreams/${id}`, function (data) {
       if (data.length !== 0) {
         var all_dreams = document.getElementById("all-dreams");
-        for (var i = data.length - 1; i+1 > (data.length - data.length); i--) {
+        for (var i = data.length - 1; i + 1 > (data.length - data.length); i--) {
           var body = JSON.parse(data[i].body);
           var stamp = moment(data[i].createdAt).format("lll");
           console.log(data[i].id)
@@ -100,25 +102,49 @@ $(document).ready(function () {
               </div>
             </div>
             `;
-  
+
           all_dreams.innerHTML = all_dreams.innerHTML += card;
         }
       }
     });
   }
 
-  $(document).on("click", ".delete-btn", function() {
+  $(document).on("click", ".delete-btn", function () {
 
     const dreamId = $(this).parents(".dream-card").data().id;
 
-    $.ajax({
-      url: `/api/dreams/${dreamId}`,
-      method: "DELETE"
-    }).then(function(deleteDream) {
-      console.log(deleteDream);
-      location.reload();
+
+
+
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#0F3459',
+      cancelButtonColor: '#C1292E',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire({
+          type: 'error',
+          showConfirmButton: false,
+          title: 'Dream Has Been Deleted!',
+          text: "Keep on dreaming!!"},
+        )
+        $.ajax({
+            url: `/api/dreams/${dreamId}`,
+            method: "DELETE"
+          }).then(function (deleteDream) {
+            console.log(deleteDream);
+            setTimeout(function () {
+              location.reload();
+            }, 2000);
+          })
+          .catch(err => console.log(err));
+      }
     })
-    .catch(err => console.log(err));
   })
 
 });

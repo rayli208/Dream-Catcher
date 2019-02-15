@@ -8,7 +8,6 @@ $(document).ready(function() {
       quality_sleep: $("#qualitySlept").val(),
       length_sleep: $("#totalSlept").val()
     };
-
     submitDream(newDream);
   });
 
@@ -22,7 +21,15 @@ $(document).ready(function() {
       data: dream
     })
       .then(function() {
-        location.reload();
+        Swal.fire({
+          type: 'success',
+          title: 'Your Dream Has Been Saved!',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        setTimeout(function(){
+          location.reload();
+        }, 1500);
       });
   }
   
